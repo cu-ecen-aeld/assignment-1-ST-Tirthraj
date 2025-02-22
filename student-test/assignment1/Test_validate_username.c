@@ -19,5 +19,7 @@ void test_validate_my_username()
      * config file and my_username() functions are setup properly
      */
 //    TEST_ASSERT_TRUE_MESSAGE(my_username(),"AESD students, please fix me!");
-	TEST_ASSERT_EQUAL_STRING_MESSAGE("ST-Tirthraj",my_username(),"PASS");
+	const char* expected_username = my_username();
+	char* actual_username = malloc_username_from_conf_file();
+	TEST_ASSERT_EQUAL_STRING_MESSAGE(expected_username,actual_username,"username does not match configuration file");
 }
