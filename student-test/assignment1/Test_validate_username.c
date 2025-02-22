@@ -22,4 +22,5 @@ void test_validate_my_username()
 	const char* expected_username = my_username();
 	char* actual_username = malloc_username_from_conf_file();
 	TEST_ASSERT_EQUAL_STRING_MESSAGE(expected_username,actual_username,"username does not match configuration file");
+	free(actual_username);
 }
